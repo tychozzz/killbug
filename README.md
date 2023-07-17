@@ -12,15 +12,16 @@ Youtube Demo 视频: https://www.youtube.com/watch?v=5ZAwlpqSbPQ
 
 ## 项目展示
 
-<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20230425223113959.png" alt="image-20230425223113959" style="zoom: 25%;" />
+<img width="750" alt="image-20230425223113959" src="https://github.com/ltyzzzxxx/killbug/assets/73587471/c26db2f6-27de-4db5-ab53-53808f165922">
 
-<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20230425225042834.png" alt="image-20230425225042834" style="zoom:25%;" />
+<img width="750" alt="image-20230425225042834" src="https://github.com/ltyzzzxxx/killbug/assets/73587471/2e8c7e43-25e5-4c75-8dfc-d1825f3d2bb1">
 
-<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20230425225131549.png" alt="image-20230425225131549" style="zoom:25%;" />
+<img width="750" alt="image-20230425225150480" src="https://github.com/ltyzzzxxx/killbug/assets/73587471/f7b94173-744f-4a9d-89af-314441a1cf1f">
 
-<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20230425225150480.png" alt="image-20230425225150480" style="zoom:25%;" />
+<img width="750" alt="image-20230425225131549" src="https://github.com/ltyzzzxxx/killbug/assets/73587471/2cafc09b-afc2-4fba-9057-e476a57da96d">
 
-<img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20230425225214302.png" alt="image-20230425225214302" style="zoom:25%;" />
+<img width="750" alt="image-20230425225214302" src="https://github.com/ltyzzzxxx/killbug/assets/73587471/9422a3e2-9be3-4cec-b2c2-fe79f3172c67">
+
 
 ## 项目简介
 
