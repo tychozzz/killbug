@@ -1,0 +1,110 @@
+server:
+  port: 1201
+
+spring:
+  application:
+    name: killbug-user
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      INDENT_OUTPUT: false
+      fail_on_empty_beans: false
+    deserialization:
+      fail_on_unknown_properties: false
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/killbug_user?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+redisson:
+  keyPrefix:
+  threads: 4
+  nettyThreads: 8
+  singleServerConfig:
+    clientName: ${spring.application.name}
+    connectionMinimumIdleSize: 8
+    connectionPoolSize: 32
+    idleConnectionTimeout: 10000
+    timeout: 3000
+    subscriptionConnectionPoolSize: 50
+
+dubbo:
+  application:
+    logger: slf4j
+    metadataType: remote
+    register-mode: instance
+    service-discovery:
+      migration: FORCE_APPLICATION
+    qos-enable: false
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://127.0.0.1:8848
+    group: DUBBO_GROUP
+  consumer:
+    cache: false
+    validation: true
+    timeout: 3000
+    check: false
+  scan:
+    base-packages: com.killbug.**.dubbo
+  custom:
+    request-log: true
+    log-level: info
+
+sa-token:
+  token-name: Authorization
+  timeout: 86400000
+  activity-timeout: 1800000
+  check-same-token: false
+  same-token-timeout: 60000
+  is-concurrent: true
+  is-share: false
+  is-read-header: true
+  is-read-cookie: false
+  jwt-secret-key: abcdefghijklmnopqrstuvwxyz
+
+mybatis-plus:
+  mapperPackage: com.killbug.**.mapper
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  typeAliasesPackage: com.killbug.**.domain
+  checkConfigLocation: false
+  configuration:
+    mapUnderscoreToCamelCase: true
+    autoMappingBehavior: PARTIAL
+    autoMappingUnknownColumnBehavior: NONE
+    logImpl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  global-config:
+    banner: true
+    dbConfig:
+      idType: ASSIGN_ID
+      logicDeleteValue: 2
+      logicNotDeleteValue: 0
+      insertStrategy: NOT_NULL
+      updateStrategy: NOT_NULL
+      where-strategy: NOT_NULL
+
+swagger:
+  enabled: true
+  info:
+    title: '标题：KillBug_接口文档'
+    description: '描述：KillBug'
+    version: '版本号：系统版本0.0.1'
+  components:
+    security-schemes:
+      apiKey:
+        type: APIKEY
+        in: HEADER
+        name: ${sa-token.token-name}
+  # 服务文档路径映射 参考 gateway router 配置
+  # 默认为服务名去除前缀转换为path 此处填特殊的配置
+  service-mapping:
+    ruoyi-gen: /code

@@ -1,0 +1,143 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8.0.31
+    container_name: mysql
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      # 数据挂载
+      - /docker/mysql/data/:/var/lib/mysql/
+      # 配置挂载
+      - /docker/mysql/conf/:/etc/mysql/conf.d/
+    command:
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_0900_ai_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+    privileged: true
+    network_mode: "host"
+
+  redis:
+    image: redis:6.2.7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - /docker/redis/conf:/redis/config
+      - /docker/redis/data/:/redis/data/
+    command: "redis-server /redis/config/redis.conf"
+    privileged: true
+    network_mode: "host"
+
+  nacos:
+    image: nacos/nacos-server:v2.1.2-slim
+    container_name: nacos
+    restart: always
+    environment:
+      MODE: standalone
+    ports:
+      - "8848:8848"
+
+  killbug-gateway:
+    image: killbug-gateway:1.0.0
+    container_name: killbug-gateway
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8888:8888"
+    volumes:
+      - /docker/killbug-gateway/logs/:/killbug/gateway/logs
+    privileged: true
+    network_mode: "host"
+
+  killbug-auth:
+    image: killbug-auth:1.0.0
+    container_name: killbug-auth
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "1101:1101"
+    volumes:
+      - /docker/killbug-auth/logs/:/killbug/auth/logs
+    privileged: true
+    network_mode: "host"
+
+  killbug-bounty:
+    image: killbug-bounty:1.0.0
+    container_name: killbug-bounty
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "1401:1401"
+    volumes:
+      - /docker/killbug-bounty/logs/:/killbug/bounty/logs
+    privileged: true
+    network_mode: "host"
+
+  killbug-chat:
+    image: killbug-chat:1.0.0
+    container_name: killbug-chat
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8087:8087"
+    volumes:
+      - /docker/killbug-chat/logs/:/killbug/chat/logs
+    privileged: true
+    network_mode: "host"
+
+  killbug-index:
+    image: killbug-index:1.0.0
+    container_name: killbug-index
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "1001:1001"
+    volumes:
+      - /docker/killbug-index/logs/:/killbug/index/logs
+    privileged: true
+    network_mode: "host"
+
+  killbug-user:
+    image: killbug-user:1.0.0
+    container_name: killbug-user
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "1201:1201"
+    volumes:
+      - /docker/killbug-user/logs/:/killbug/user/logs
+    privileged: true
+    network_mode: "host"
+
+  killbug-question:
+    image: killbug-question:1.0.0
+    container_name: killbug-question
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "1301:1301"
+    volumes:
+      - /docker/killbug-question/logs/:/killbug/question/logs
+    privileged: true
+    network_mode: "host"
+
+  killbug-websocket:
+    image: killbug-websocket:1.0.0
+    container_name: killbug-websocket
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8099:8099"
+    volumes:
+      - /docker/killbug-websocket/logs/:/killbug/websocket/logs
+    privileged: true
+    network_mode: "host"

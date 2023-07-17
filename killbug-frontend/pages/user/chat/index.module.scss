@@ -1,0 +1,52 @@
+.chatWindow {
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  padding: 10px;
+  margin-bottom: 10px;
+  max-width: 60%;
+  word-wrap: break-word;
+  border-radius: 10px;
+}
+
+.myMessage {
+  background-color: #0084ff;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.otherMessage {
+  background-color: #f0f0f0;
+  color: #000;
+  align-self: flex-start;
+}
+
+.inputArea {
+  padding: 20px;
+}
+
+.cardItem {
+  cursor: pointer;
+}
+
+.cardItem:hover {
+  background-color: #fafafa;
+}
+
+.cardItem:active {
+  background-color: #fafafa !important;
+}
+
+// .ant-list-item-selected {
+//   background-color: #fafafa;
+// }

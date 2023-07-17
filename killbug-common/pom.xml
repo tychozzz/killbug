@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>kill-bug</artifactId>
+        <groupId>com.killbug</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>killbug-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>killbug-common-alibaba-bom</module>
+        <module>killbug-common-core</module>
+        <module>killbug-common-dubbo</module>
+        <module>killbug-common-bom</module>
+        <module>killbug-common-doc</module>
+        <module>killbug-common-idempotent</module>
+        <module>killbug-common-redis</module>
+        <module>killbug-common-sentinel</module>
+        <module>killbug-common-security</module>
+        <module>killbug-common-satoken</module>
+        <module>killbug-common-mybatis</module>
+        <module>killbug-common-elasticsearch</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>

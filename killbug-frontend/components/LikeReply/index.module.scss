@@ -1,0 +1,11 @@
+.iconCount {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconCount:hover {
+  color: #3f7ef7
+}

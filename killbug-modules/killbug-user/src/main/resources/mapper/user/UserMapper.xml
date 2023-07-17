@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.killbug.user.mapper.UserMapper">
+
+    <resultMap type="com.killbug.user.api.domain.User" id="UserResult">
+        <id     property="userId"       column="user_id"      />
+        <result property="username"    column="username"    />
+        <result property="nickname"     column="nickname"     />
+        <result property="email"   column="email"   />
+        <result property="phone"    column="phone"    />
+        <result property="sex"      column="sex"      />
+        <result property="avatar"      column="avatar"      />
+        <result property="password"      column="password"      />
+        <result property="status"      column="status"      />
+        <result property="position"      column="position"      />
+        <result property="company"      column="company"      />
+        <result property="website"      column="website"      />
+        <result property="introduction"      column="introduction"      />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="balance"    column="balance"    />
+    </resultMap>
+    <update id="incrBalanceById">
+        update user
+        set balance = balance + #{reward}
+        where user_id = #{userId}
+    </update>
+    <update id="decrBalanceById">
+        update user
+        set balance = balance - #{reward}
+        where user_id = #{userId}
+    </update>
+</mapper>

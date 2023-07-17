@@ -1,0 +1,2 @@
+com.killbug.common.satoken.dao.PlusSaTokenDao
+com.killbug.common.satoken.config.SaTokenConfiguration

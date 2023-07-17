@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <artifactId>killbug-common-bom</artifactId>
+    <groupId>com.killbug</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- common-core -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-core</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- common-doc -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-doc</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- common-dubbo -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-dubbo</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- common-idempotent -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-idempotent</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- common-mybatis -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-mybatis</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- common-redis -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-redis</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- common-satoken -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-satoken</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- common-security -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-security</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- common-sentinel -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-sentinel</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <!-- common-elasticsearch -->
+            <dependency>
+                <groupId>com.killbug</groupId>
+                <artifactId>killbug-common-elasticsearch</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

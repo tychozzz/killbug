@@ -1,0 +1,67 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .logoArea {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-right: 60px;
+    cursor: pointer;
+  }
+
+  .linkArea {
+    display: flex;
+    a {
+      font-size: 18px;
+      padding: 0 20px;
+      color: #515767;
+    }
+    .active {
+      color: #1e80ff;
+    }
+  }
+
+  .operationArea {
+    margin-left: 150px;
+    button {
+      margin-right: 20px;
+    }
+  }
+
+  .mobileMenuIcon {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+
+    .linkArea {
+      display: none;
+    }
+
+    .operationArea {
+      display: flex;
+      flex-direction: row;
+      margin-left: 10px;
+      align-items: center;
+      justify-content: center;
+
+      .mobileMenuIcon {
+        display:flex;
+        margin-left: 30px;
+      }
+    }
+  }
+}

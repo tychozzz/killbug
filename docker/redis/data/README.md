@@ -1,0 +1,1 @@
+for data directory, execute `chmod 777 /docker/redis/data`

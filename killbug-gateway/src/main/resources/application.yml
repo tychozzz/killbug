@@ -1,0 +1,170 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: killbug-gateway
+  cloud:
+    gateway:
+      requestLog: true
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
+      routes:
+        - id: killbug-index
+          uri: lb://killbug-index
+          predicates:
+            - Path=/index/**
+          filters:
+            - StripPrefix=1
+        - id: killbug-auth
+          uri: lb://killbug-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+        - id: killbug-user
+          uri: lb://killbug-user
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+        - id: killbug-question
+          uri: lb://killbug-question
+          predicates:
+            - Path=/question/**
+          filters:
+            - StripPrefix=1
+        - id: killbug-bounty
+          uri: lb://killbug-bounty
+          predicates:
+            - Path=/bounty/**
+          filters:
+            - StripPrefix=1
+        - id: killbug-chat
+          uri: lb://killbug-chat
+          predicates:
+            - Path=/chat/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      server-addr: 127.0.0.1:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      INDENT_OUTPUT: false
+      fail_on_empty_beans: false
+    deserialization:
+      fail_on_unknown_properties: false
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+# security config
+security:
+  # xss prevention
+  xss:
+    enabled: true
+  # white list
+  ignore:
+    whites:
+      - /**
+      - /code
+      - /auth/logout
+      - /auth/login
+      - /index/**
+      - /auth/smsLogin
+      - /auth/xcxLogin
+      - /auth/register
+      - /resource/sms/code
+      - /*/v3/api-docs
+      - /csrf
+
+redisson:
+  keyPrefix:
+  threads: 4
+  nettyThreads: 8
+  singleServerConfig:
+    clientName: ${spring.application.name}
+    connectionMinimumIdleSize: 8
+    connectionPoolSize: 32
+    idleConnectionTimeout: 10000
+    timeout: 3000
+    subscriptionConnectionPoolSize: 50
+
+dubbo:
+  application:
+    logger: slf4j
+    metadataType: remote
+    register-mode: instance
+    service-discovery:
+      migration: FORCE_APPLICATION
+    qos-enable: false
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://127.0.0.1:8848
+    group: DUBBO_GROUP
+  consumer:
+    cache: false
+    validation: true
+    timeout: 3000
+    check: false
+  scan:
+    base-packages: com.killbug.**.dubbo
+  custom:
+    request-log: true
+    log-level: info
+
+sa-token:
+  token-name: Authorization
+  timeout: 86400000
+  activity-timeout: 1800000
+  check-same-token: false
+  same-token-timeout: 60000
+  is-concurrent: true
+  is-share: false
+  is-read-header: true
+  is-read-cookie: false
+  jwt-secret-key: abcdefghijklmnopqrstuvwxyz
+
+mybatis-plus:
+  mapperPackage: com.killbug.**.mapper
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  typeAliasesPackage: com.killbug.**.domain
+  checkConfigLocation: false
+  configuration:
+    mapUnderscoreToCamelCase: true
+    autoMappingBehavior: PARTIAL
+    autoMappingUnknownColumnBehavior: NONE
+    logImpl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  global-config:
+    banner: true
+    dbConfig:
+      idType: ASSIGN_ID
+      logicDeleteValue: 2
+      logicNotDeleteValue: 0
+      insertStrategy: NOT_NULL
+      updateStrategy: NOT_NULL
+      where-strategy: NOT_NULL
+
+swagger:
+  enabled: true
+  info:
+    title: '标题：KillBug_接口文档'
+    description: '描述：KillBug'
+    version: '版本号：系统版本0.0.1'
+  components:
+    security-schemes:
+      apiKey:
+        type: APIKEY
+        in: HEADER
+        name: ${sa-token.token-name}
+  # 服务文档路径映射 参考 gateway router 配置
+  # 默认为服务名去除前缀转换为path 此处填特殊的配置
+  service-mapping:
+    ruoyi-gen: /code

@@ -1,0 +1,45 @@
+.articleBox {
+
+  .title {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-top: 15px;
+
+  .upDownInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+}
+
+.countBox {
+  position: fixed; 
+  display: flex;
+  flex-direction: column;
+  top: 20%;
+  left: 5%;
+
+  .circleBox {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .circleBox:hover {
+    color: #3f7ef7
+  }
+}

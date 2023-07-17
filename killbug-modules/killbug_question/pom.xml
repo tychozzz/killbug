@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>killbug-modules</artifactId>
+        <groupId>com.killbug</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>killbug-question</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!-- SpringCloud Alibaba Nacos -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- SpringBoot Actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- common-sentinel -->
+        <dependency>
+            <groupId>com.killbug</groupId>
+            <artifactId>killbug-common-sentinel</artifactId>
+        </dependency>
+        <!-- common-mybatis -->
+        <dependency>
+            <groupId>com.killbug</groupId>
+            <artifactId>killbug-common-mybatis</artifactId>
+        </dependency>
+        <!-- common-dubbo -->
+        <dependency>
+            <groupId>com.killbug</groupId>
+            <artifactId>killbug-common-dubbo</artifactId>
+        </dependency>
+        <!-- common-security -->
+        <dependency>
+            <groupId>com.killbug</groupId>
+            <artifactId>killbug-common-security</artifactId>
+        </dependency>
+        <!-- common-doc -->
+        <dependency>
+            <groupId>com.killbug</groupId>
+            <artifactId>killbug-common-doc</artifactId>
+        </dependency>
+        <!-- api-user -->
+        <dependency>
+            <groupId>com.killbug</groupId>
+            <artifactId>killbug-api-user</artifactId>
+        </dependency>
+        <!-- api-question -->
+        <dependency>
+            <groupId>com.killbug</groupId>
+            <artifactId>killbug-api-question</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

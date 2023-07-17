@@ -1,0 +1,27 @@
+.profileBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .nickname {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .iconWord {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    align-items: center
+  }
+}
+
+.cardItem {
+  cursor: pointer;
+}
+
+.cardItem:hover {
+  background-color: #fafafa;
+}
+
+.achievement {
+  margin-bottom: 10px;
+}
