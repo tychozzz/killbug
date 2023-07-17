@@ -41,6 +41,40 @@ Kill-Bug是一个易于使用的平台，专为程序员解决日常开发中遇
 -   **用户模块**
 
     这是各类网站的常见模块。用户可以登录、注册、退出、查看个人信息和修改个人信息。此外，结合 Kill Bug 的主要功能，用户还可以查看他们发布的问题、发布的赏金以及领取的赏金。还有一个有趣的功能：成就。用户可以查看自己发布的问题数量、发布的赏金数量、获得的点赞数等等。
+
+## 技术选型
+
+### 前端技术栈
+
+|  Technology  |                           Feature                            |
+| :----------: | :----------------------------------------------------------: |
+|    React     |              基本 Web 框架                |
+|   Next.js    | SSR 框架 |
+|  Ant Design  | UI 组件库 |
+|     Mobx     | 全局状态管理库 |
+|    Axios     | HTTP 请求库 |
+|    Router    | 路由组件 |
+|     Mock     | HTTP 请求 mock |
+| Quill Editor | 富文本编辑器 |
+|    Socket    | 即时通信 / 协同编辑    |
+|  Js-Cookie   | Cookie 管理工具 |
+
+### 后端技术栈
+
+|    Technology     | Feature                                                      |
+| :---------------: | :----------------------------------------------------------- |
+|    Spring Boot    | 后端主体框架 |
+|   Spring Cloud    | 微服务框架 |
+|     Sentinel      | 流量控制组件 |
+|       Dubbo       | 分布式 RPC 框架 |
+|       MySQL       | 表数据存储                                         |
+|       Redis       | 缓存数据库 |
+|     Sa-Token      | 轻量级登录鉴权框架 |
+|      Mybatis      | ORM 框架 |
+|     Redisson      | 封装 Redis 操作 |
+|     Websocket     | 通信技术        |
+|      Hutool       | Java 工具库 |
+| Alibaba Cloud OSS | 对象存储 |
     
 ## 软件架构
 
@@ -51,6 +85,35 @@ Kill-Bug是一个易于使用的平台，专为程序员解决日常开发中遇
 当用户与网站进行交互时，前端会向后端发送请求，以获取或修改数据库中的数据。后端处理请求并返回响应，然后前端将其呈现为图形界面。
 
 具体而言，前端使用 Axios 向后端发送 HTTP 的 Get 或 Post 请求，这些请求被网关模块接收。网关使用安全模块过滤、验证和验证请求，然后将其转发到相应的微服务模块。请求的处理由微服务模块完成，该模块依赖于 Nacos、MySQL 和 Redis 等中间件。这就是 Kill Bug 的系统架构。
+
+## 模块树
+
+```
+├── killbug-common                   -> Common Module
+│   ├── killbug-common-alibaba-bom       -> Spring-Cloud-Alibaba Dependency 
+│   ├── killbug-common-bom               -> Common Dependency
+│   ├── killbug-common-core              -> Core Configuration and Dependency
+│   ├── killbug-common-doc               -> Swagger API Doc Configuration and Dependency
+│   ├── killbug-common-dubbo             -> Dubbo RPC Configuration and Dependency
+│   ├── killbug-common-idempotent        -> Idempotent Configuration
+│   ├── killbug-common-elasticsearch     -> Elastic Configuration and Dependency
+│   ├── killbug-common-mybatis           -> Mybatis Configuration and Dependency
+│   ├── killbug-common-redis             -> Redis Cache Configuration and Dependency
+│   ├── killbug-common-satoken           -> Sa-Token Authorization Framework Configuration and Dependency
+│   ├── killbug-common-security          -> Security Interceptor Configuration
+│   └── killbug-common-sentinel          -> Sentinel Flow Control Configuration and Dependency
+├── killbug-api                      -> RPC Interface Module
+├── killbug-auth                     -> Authentication and Authorization Service 
+├── killbug-gateway                  -> Gateway Service
+├── killbug-websocket                    -> Websocket Service
+└── killbug-modules                  -> Business Module
+    ├── killbug-user                    -> User Service
+    ├── killbug-bounty                   -> Bounty Service
+    ├── killbug-chat                     -> Chat Service
+    ├── killbug-index                    -> Index Service
+    ├── killbug-search                   -> Search Service
+    └── killbug-question                 -> Question Service
+```
 
 ## 快速开始
 
@@ -152,68 +215,7 @@ Please notice that Kill-Bug runs on `localhost`. If you want to run via a **virt
      <img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20230425162444400.png" alt="image-20230425162444400" style="zoom: 33%;" />
 
 
-## 前端技术栈
-
-|  Technology  |                           Feature                            |
-| :----------: | :----------------------------------------------------------: |
-|    React     |              基本 Web 框架                |
-|   Next.js    | SSR 框架 |
-|  Ant Design  | UI 组件库 |
-|     Mobx     | 全局状态管理库 |
-|    Axios     | HTTP 请求库 |
-|    Router    | 路由组件 |
-|     Mock     | HTTP 请求 mock |
-| Quill Editor | 富文本编辑器 |
-|    Socket    | 即时通信 / 协同编辑    |
-|  Js-Cookie   | Cookie 管理工具 |
-
-## 后端技术栈
-
-|    Technology     | Feature                                                      |
-| :---------------: | :----------------------------------------------------------- |
-|    Spring Boot    | 后端主体框架 |
-|   Spring Cloud    | 微服务框架 |
-|     Sentinel      | 流量控制组件 |
-|       Dubbo       | 分布式 RPC 框架 |
-|       MySQL       | 表数据存储                                         |
-|       Redis       | 缓存数据库 |
-|     Sa-Token      | 轻量级登录鉴权框架 |
-|      Mybatis      | ORM 框架 |
-|     Redisson      | 封装 Redis 操作 |
-|     Websocket     | 通信技术        |
-|      Hutool       | Java 工具库 |
-| Alibaba Cloud OSS | 对象存储 |
-
-🌲 后端模块树
-
-```
-├── killbug-common                   -> Common Module
-│   ├── killbug-common-alibaba-bom       -> Spring-Cloud-Alibaba Dependency 
-│   ├── killbug-common-bom               -> Common Dependency
-│   ├── killbug-common-core              -> Core Configuration and Dependency
-│   ├── killbug-common-doc               -> Swagger API Doc Configuration and Dependency
-│   ├── killbug-common-dubbo             -> Dubbo RPC Configuration and Dependency
-│   ├── killbug-common-idempotent        -> Idempotent Configuration
-│   ├── killbug-common-elasticsearch     -> Elastic Configuration and Dependency
-│   ├── killbug-common-mybatis           -> Mybatis Configuration and Dependency
-│   ├── killbug-common-redis             -> Redis Cache Configuration and Dependency
-│   ├── killbug-common-satoken           -> Sa-Token Authorization Framework Configuration and Dependency
-│   ├── killbug-common-security          -> Security Interceptor Configuration
-│   └── killbug-common-sentinel          -> Sentinel Flow Control Configuration and Dependency
-├── killbug-api                      -> RPC Interface Module
-├── killbug-auth                     -> Authentication and Authorization Service 
-├── killbug-gateway                  -> Gateway Service
-├── killbug-websocket                    -> Websocket Service
-└── killbug-modules                  -> Business Module
-    ├── killbug-user                    -> User Service
-    ├── killbug-bounty                   -> Bounty Service
-    ├── killbug-chat                     -> Chat Service
-    ├── killbug-index                    -> Index Service
-    ├── killbug-search                   -> Search Service
-    └── killbug-question                 -> Question Service
-```
-
-### 设计与实现方案
+## 后端设计与实现方案
 
 - **身份验证和授权**
 
