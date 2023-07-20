@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/ltyzzzxxx/killbug/assets/73587471/f0a3b083-5a66-44f5-9f1d-e4369cb859c2">
+  <img src="https://github.com/ltyzzzxxx/killbug/assets/73587471/664b3a54-013b-4212-a04c-e862dc76aa2e" width='200'>
 </p>
 
 <div align="center">
