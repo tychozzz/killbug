@@ -1,16 +1,35 @@
-![killbug-logo2](https://user-images.githubusercontent.com/73587471/234063708-6a7beefc-e5e8-48c4-9786-913358de5e02.png)
+<p align="center">
+  <img src="https://github.com/ltyzzzxxx/killbug/assets/73587471/f0a3b083-5a66-44f5-9f1d-e4369cb859c2">
+</p>
 
-# Kill Bug: 你最值得信赖的编程助手！
+<div align="center">
+    
+# Kill Bug
 
-Youtube Demo 视频: https://www.youtube.com/watch?v=5ZAwlpqSbPQ
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable-next-line MD036 -->
+_✨ 你最值得信赖的编程助手！ ✨_
+<!-- prettier-ignore-end -->
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/ltyzzzxxx/killbug?display_name=tag" />
+  <img src="https://img.shields.io/github/stars/ltyzzzxxx/killbug" />
+  <img src="https://img.shields.io/github/forks/ltyzzzxxx/killbug" />
+  <img src="https://img.shields.io/github/issues/ltyzzzxxx/killbug" />
+  <img src="https://img.shields.io/badge/license-Apache%20-yellow.svg" />
+</p>
+</div>
 
-> 如果 README 文档有翻译腔，请见谅。因为原项目为课程作业，原 README 文档也是英文版本，项目后续会持续完善。有问题请提出 Issue，谢谢！
+> 如果 README 文档有翻译腔，请见谅。因为原项目为课程作业，原 README 文档也是英文版本。
+> 
+> 项目后续会持续完善。有问题请提出 Issue，谢谢！
 
 项目代码量：
 
 <img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20230424203013147.png" alt="image-20230424203013147" style="zoom:50%;" />
 
 ## 项目展示
+
+Youtube Demo 视频: https://www.youtube.com/watch?v=5ZAwlpqSbPQ
 
 <img width="750" alt="image-20230425223113959" src="https://github.com/ltyzzzxxx/killbug/assets/73587471/c26db2f6-27de-4db5-ab53-53808f165922">
 
