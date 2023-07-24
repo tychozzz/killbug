@@ -8,7 +8,7 @@
 
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable-next-line MD036 -->
-_✨ 你最值得信赖的编程助手！ ✨_
+_✨ Your Most Reliable Programming Assistant! ✨_
 <!-- prettier-ignore-end -->
 <p align="center">
   <img src="https://img.shields.io/github/v/release/ltyzzzxxx/killbug?display_name=tag" />
