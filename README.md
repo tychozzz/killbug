@@ -31,8 +31,6 @@ _✨ Your Most Reliable Programming Assistant! ✨_
 
 ## 项目展示
 
-Youtube Demo 视频: https://www.youtube.com/watch?v=5ZAwlpqSbPQ
-
 <img width="750" alt="image-20230425223113959" src="https://github.com/ltyzzzxxx/killbug/assets/73587471/c26db2f6-27de-4db5-ab53-53808f165922">
 
 <img width="750" alt="image-20230425225042834" src="https://github.com/ltyzzzxxx/killbug/assets/73587471/2e8c7e43-25e5-4c75-8dfc-d1825f3d2bb1">
