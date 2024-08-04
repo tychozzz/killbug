@@ -19,8 +19,6 @@ _✨ Your Most Reliable Programming Assistant! ✨_
 </p>
 </div>
 
-Demo Video Youtube Link: https://www.youtube.com/watch?v=5ZAwlpqSbPQ
-
 The following is the amount of code for this project.
 
 <img src="https://lty-image-bed.oss-cn-shenzhen.aliyuncs.com/blog/image-20230424203013147.png" alt="image-20230424203013147" style="zoom:50%;" />
